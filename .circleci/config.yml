@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: openjdk:8-jdk
+    steps:
+      - checkout
+      - run: apt update -y && apt install -y gnupg2
+      - run: curl -sSL https://secchannel.rsk.co/release.asc | gpg2 --import -
+      - run: gpg2 --verify SHA256SUMS.asc && sha256sum --check SHA256SUMS.asc
+      - run: ./configure.sh
+      - run: ./gradlew test

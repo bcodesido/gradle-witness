@@ -1,5 +1,7 @@
 # Gradle Witness
 
+[![CircleCI](https://circleci.com/gh/rsksmart/gradle-witness.svg?style=svg)](https://circleci.com/gh/rsksmart/gradle-witness)
+
 A gradle plugin that enables static verification for remote dependencies.
 
 Build systems like gradle and maven allow one to specify dependencies for versioned artifacts. An
